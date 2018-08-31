@@ -116,6 +116,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         updateUi(people);
+        finish();
+
+        startActivity(getIntent());
     }
 
     public void updateUi(ArrayList<Person> itens) {
@@ -133,11 +136,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void edit(View view) throws IOException {
-        Intent intent = new Intent(this, AddPerson.class);
+        Intent it = new Intent(this, EditPerson.class);
 
-        startActivity(intent);
+        View v = (View)view.getParent();
+
+        TextView txtid = (TextView) v.findViewById(R.id.txt_label_id);
+        TextView txtnome = (TextView) v.findViewById(R.id.txt_label);
+        TextView txtsobrenome = (TextView) v.findViewById(R.id.txt_last);
+
+        it.putExtra("id",txtid.getText());
+        it.putExtra("nome",txtnome.getText());
+        it.putExtra("sobrenome",txtsobrenome.getText());
+
         finish();
-        startActivity(getIntent());
+        startActivity(it);
 
         Toast.makeText(this, "Atualizar", Toast.LENGTH_SHORT).show();
     }

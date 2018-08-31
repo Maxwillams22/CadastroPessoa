@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddPerson"></activity>
+        <activity android:name=".EditPerson" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
