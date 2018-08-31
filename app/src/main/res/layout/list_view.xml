@@ -15,10 +15,10 @@
     <TextView
         android:id="@+id/txt_last"
         android:layout_width="128dp"
-        android:layout_height="47dp"
-        android:layout_alignParentTop="true"
+        android:layout_height="37dp"
         android:layout_alignBottom="@+id/button"
-        android:layout_toStartOf="@+id/button"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/txt_label"
         android:textSize="20dp" />
 
 
@@ -34,12 +34,22 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Delete"
-        android:textSize="10dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
+        android:layout_width="33dp"
+        android:layout_height="32dp"
         android:layout_alignParentEnd="true"
-        android:onClick="remove"></Button>
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="14dp"
+        android:background="@android:drawable/ic_menu_delete"
+        android:onClick="remove"
+        android:textSize="10dp"></Button>
+
+    <Button
+        android:id="@+id/button_edit"
+        android:layout_width="31dp"
+        android:layout_height="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/txt_last"
+        android:background="@android:drawable/ic_menu_edit"
+        android:onClick="edit"
+        android:textSize="10dp"></Button>
 </RelativeLayout>

@@ -1,9 +1,11 @@
 package com.example.maxwillams.cadastropessoa;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,6 +55,11 @@ public class AddPerson extends AppCompatActivity {
 
         HttpResponse response = httpClient.execute(client);
 
+        Intent intent = new Intent(this, MainActivity.class);
 
+        startActivity(intent);
+
+
+        Toast.makeText(this, "Registro Salvo", Toast.LENGTH_SHORT).show();
     }
 }

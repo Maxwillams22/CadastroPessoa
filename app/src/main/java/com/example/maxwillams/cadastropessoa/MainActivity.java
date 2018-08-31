@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected (MenuItem item) {
         if (item.getItemId() == R.id.add_person) {
             Intent intent = new Intent(this, AddPerson.class);
-
+            finish();
             startActivity(intent);
             return true;
         }
@@ -128,6 +129,20 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Deletado com sucesso!", Toast.LENGTH_SHORT).show();
         ca.notifyDataSetChanged();
 
-        
+
     }
+
+    public void edit(View view) throws IOException {
+        Intent intent = new Intent(this, AddPerson.class);
+
+        startActivity(intent);
+        finish();
+        startActivity(getIntent());
+
+        Toast.makeText(this, "Atualizar", Toast.LENGTH_SHORT).show();
+    }
+
+
+
+
 }
